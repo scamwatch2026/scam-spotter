@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Makes the layout fit phones and tablets -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Scam Spotter - Learn to Spot Scams</title>
+
+  <!-- Connect the stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Load the scenario data before the quiz logic -->
+  <script src="scenarios.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <h1>Scam Spotter</h1>
+    <p>Learn to spot scams and stay safe online.</p>
+  </header>
+
+  <main class="container">
+
+    <!-- Welcome screen -->
+    <section id="welcome-screen" class="panel">
+      <h2>Welcome to Scam Spotter!</h2>
+
+      <p>
+        Test your scam-spotting skills with three everyday
+        scenarios. Read each situation, choose an answer,
+        and learn how to stay safe.
+      </p>
+
+      <p>You can take your time. There is no time limit.</p>
+
+      <button id="start-button" class="button button-primary">
+        Start Quiz
+      </button>
+    </section>
+
+    <!-- Quiz screen: JavaScript fills in the scenario -->
+    <section id="quiz-screen" class="panel" hidden>
+      <p id="progress" class="progress" aria-live="polite"></p>
+
+      <h2 id="scenario-title" tabindex="-1"></h2>
+
+      <p id="scenario-description" class="scenario-description"></p>
+
+      <!-- Fieldset groups the answer choices accessibly -->
+      <fieldset id="answer-fieldset">
+        <legend>Choose the best answer:</legend>
+        <div id="answer-options"></div>
+      </fieldset>
+
+      <div class="button-row">
+        <button id="check-button" class="button button-primary" disabled>
+          Check Answer
+        </button>
+
+        <button id="next-button" class="button button-secondary" hidden>
+          Next Scenario
+        </button>
+      </div>
+
+      <!-- Screen readers can announce feedback when it changes -->
+      <div id="feedback" class="feedback" aria-live="polite" hidden>
+        <h3 id="feedback-title"></h3>
+        <p id="feedback-explanation"></p>
+      </div>
+    </section>
+
+    <!-- Final results screen -->
+    <section id="results-screen" class="panel" hidden>
+      <h2 tabindex="-1" id="results-title">Quiz Complete!</h2>
+
+      <p id="final-score" class="final-score"></p>
+      <p id="results-message"></p>
+
+      <button id="restart-button" class="button button-primary">
+        Try Again
+      </button>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      Remember: if a message seems suspicious, stop and
+      verify it using official contact details.
+    </p>
+    <p>Scam Spotter — a student learning project.</p>
+  </footer>
+</body>
+</html>
