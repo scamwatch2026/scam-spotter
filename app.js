@@ -1,4 +1,4 @@
-*/
+
 
 // Find the main sections and buttons in index.html.
 const welcomeScreen = document.getElementById("welcome-screen");
